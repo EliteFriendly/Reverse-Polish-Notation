@@ -22,14 +22,14 @@ class ReversePolishNot
 	stack <string> operators;//stack for operators
 	stack <string> outLine;//Using for symbols and numbers
 
-	string inputExpression;
+	string inputExpression;//Input expression after adding spaces
 
 	string* RPN;
 	int lengthRPN;
 
-	void convertToRPN();
-	int getPriority(string op);
-	void operationPriotity(string op);
+	void convertToRPN();//Convert to Reverse Polish Notation
+	int getPriority(string op);//Get priority of operation
+	void operationPriotity(string op);//Rechange stack of operators with priority
 
 public:
 	ReversePolishNot(string str);

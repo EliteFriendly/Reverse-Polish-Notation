@@ -55,13 +55,17 @@ void ReversePolishNot::convertToRPN()
 			outLine.push(tmpStack[i]);
 		}
 	}
+	//Очистка стека операторов
 	while (!operators.empty())
 	{
 		outLine.push(operators.top());
 		operators.pop();
 	}
+
 	RPN = new string[outLine.size()];
 	lengthRPN = outLine.size();
+
+	//Переносим в массив для многоразовой работы
 	for (int i = outLine.size() - 1; i >= 0; i--)
 	{
 		RPN[i] = outLine.top();
