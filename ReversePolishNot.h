@@ -33,9 +33,11 @@ class ReversePolishNot
 
 public:
 	ReversePolishNot(string str);
+	ReversePolishNot();
+
 	~ReversePolishNot();
 
-
+	void setExpression(string str);
 	double getResult(double* x);
 	string printRPN();
 

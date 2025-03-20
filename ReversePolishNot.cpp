@@ -119,6 +119,20 @@ void ReversePolishNot::operationPriotity(string op)
 
 ReversePolishNot::ReversePolishNot(string str)
 {
+	setExpression(str);
+}
+
+ReversePolishNot::ReversePolishNot()
+{
+}
+
+ReversePolishNot::~ReversePolishNot()
+{
+	delete[] RPN;
+}
+
+void ReversePolishNot::setExpression(string str)
+{
 	//Добавление пробелов в строку
 	for (int i = 0; i < str.length(); i++)
 	{
@@ -129,14 +143,9 @@ ReversePolishNot::ReversePolishNot(string str)
 			i += 2;
 		}
 	}
-	this->inputExpression = str.insert(str.length()," ");
+	this->inputExpression = str.insert(str.length(), " ");
 
 	convertToRPN();
-}
-
-ReversePolishNot::~ReversePolishNot()
-{
-	delete[] RPN;
 }
 
 double ReversePolishNot::getResult(double* x)
